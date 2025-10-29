@@ -6,16 +6,25 @@ public class Menu_Sys : MonoBehaviour
 
     public MonoBehaviour firstPersonControllerScript;
 
-    // public GameObject pauseMenuUI; 
+    // --- 주석 해제 ---
+    public GameObject pauseMenuUI;
+    // --- ---
 
     void Start()
     {
         if (firstPersonControllerScript == null)
         {
+            // 이 스크립트가 Player에 붙어있다는 가정
             firstPersonControllerScript = GetComponent<FirstPersonController>();
         }
 
-        ResumeGame();
+        // 게임 시작 시 UI가 혹시 켜져있다면 확실히 꺼줍니다.
+        if (pauseMenuUI != null)
+        {
+            pauseMenuUI.SetActive(false);
+        }
+
+        ResumeGame(); // 게임 시작 상태로 초기화
     }
 
     void Update()
@@ -43,10 +52,17 @@ public class Menu_Sys : MonoBehaviour
             firstPersonControllerScript.enabled = false;
         }
 
-        // if (pauseMenuUI != null)
-        // {
-        //     pauseMenuUI.SetActive(true);
-        // }
+        // --- 주석 해제 및 UI 활성화 ---
+        if (pauseMenuUI != null)
+        {
+            pauseMenuUI.SetActive(true);
+        }
+        // --- ---
+
+        // --- 마우스 커서 보이기 및 잠금 해제 ---
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        // --- ---
     }
 
     void ResumeGame()
@@ -59,9 +75,16 @@ public class Menu_Sys : MonoBehaviour
             firstPersonControllerScript.enabled = true;
         }
 
-        // if (pauseMenuUI != null)
-        // {
-        //     pauseMenuUI.SetActive(false);
-        // }
+        // --- 주석 해제 및 UI 비활성화 ---
+        if (pauseMenuUI != null)
+        {
+            pauseMenuUI.SetActive(false);
+        }
+        // --- ---
+
+        // --- 마우스 커서 숨기기 및 잠금 ---
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        // --- ---
     }
 }
