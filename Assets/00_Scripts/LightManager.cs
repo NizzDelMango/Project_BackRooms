@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class LightManager : MonoBehaviour
 {
@@ -8,6 +9,11 @@ public class LightManager : MonoBehaviour
     [Header("제어할 발광 머티리얼")]
     public Material[] emissiveMaterials;
 
+    // 사운드 제어를 위한 변수 추가
+    [Header("사운드 설정")]
+    public AudioSource ambienceAudioSource;
+    public AudioClip brightModeClip; // Backrooms_LV_0_Ambience.wav를 할당할 클립 변수
+
     private bool isBright;
 
     private Color[] originalEmissionColors;
@@ -16,6 +22,7 @@ public class LightManager : MonoBehaviour
 
     void Start()
     {
+        // 원본 상태 저장 로직
         if (playerLight != null)
         {
             originalPlayerLightState = playerLight.enabled;
@@ -38,8 +45,8 @@ public class LightManager : MonoBehaviour
             }
         }
 
-        //어두운 상태로 게임 시작
-        SetDarkMode();
+        // 씬 전환 후의 타이밍 로직 시작
+        StartCoroutine(LightSequence());
     }
 
     void OnDestroy()
@@ -68,6 +75,12 @@ public class LightManager : MonoBehaviour
                 }
             }
         }
+
+        // 씬 파괴 시 사운드 정지
+        if (ambienceAudioSource != null && ambienceAudioSource.isPlaying)
+        {
+            ambienceAudioSource.Stop();
+        }
     }
 
     void Update()
@@ -75,6 +88,26 @@ public class LightManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.K))
         {
             ToggleLighting();
+        }
+    }
+
+    IEnumerator LightSequence()
+    {
+        SetDarkMode();
+
+        yield return new WaitForSeconds(4.0f);
+
+        SetBrightMode();
+
+        while (true)
+        {
+            yield return new WaitForSeconds(60.0f);
+
+            SetDarkMode();
+
+            yield return new WaitForSeconds(60.0f);
+
+            SetBrightMode();
         }
     }
 
@@ -109,6 +142,14 @@ public class LightManager : MonoBehaviour
             }
         }
         isBright = true;
+
+        // 빛이 켜지면 사운드 재생
+        if (ambienceAudioSource != null && brightModeClip != null)
+        {
+            ambienceAudioSource.clip = brightModeClip;
+            ambienceAudioSource.loop = true; // 반복 재생 설정
+            ambienceAudioSource.Play();
+        }
     }
 
     public void SetDarkMode()
@@ -130,5 +171,11 @@ public class LightManager : MonoBehaviour
             }
         }
         isBright = false;
+
+        // 빛이 꺼지면 사운드 정지
+        if (ambienceAudioSource != null && ambienceAudioSource.isPlaying)
+        {
+            ambienceAudioSource.Stop();
+        }
     }
 }
