@@ -315,7 +315,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: fc4df91a3ea27564da3e45702676e2f2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.82
+      value: -65.24
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fc4df91a3ea27564da3e45702676e2f2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -323,7 +323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fc4df91a3ea27564da3e45702676e2f2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 41.23
+      value: 160.08
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fc4df91a3ea27564da3e45702676e2f2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -12414,7 +12414,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1307558881}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.94
+  m_Radius: 0.8
   m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -13291,7 +13291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 836afe70bdb07654c99ffd240dd3e7e5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 61.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 836afe70bdb07654c99ffd240dd3e7e5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13299,7 +13299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 836afe70bdb07654c99ffd240dd3e7e5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 154.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 836afe70bdb07654c99ffd240dd3e7e5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13343,7 +13343,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 836afe70bdb07654c99ffd240dd3e7e5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13423,6 +13423,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 7a8f367d469819748ade8cfb4b42c4e4, type: 2}
   ambienceAudioSource: {fileID: 2100784358}
   brightModeClip: {fileID: 8300000, guid: ee9c67a8c471ecd4a9a344374b14fc38, type: 3}
+  bacteriaMonster: {fileID: 267092341}
+  smilerMonster: {fileID: 1307558881}
 --- !u!4 &2100784357
 Transform:
   m_ObjectHideFlags: 0
