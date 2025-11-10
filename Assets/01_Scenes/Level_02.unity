@@ -12259,15 +12259,15 @@ AudioReverbZone:
   m_Enabled: 1
   m_MinDistance: 200
   m_MaxDistance: 200
-  m_ReverbPreset: 1
+  m_ReverbPreset: 7
   m_Room: -1000
-  m_RoomHF: -100
-  m_DecayTime: 1.49
-  m_DecayHFRatio: 0.83
-  m_Reflections: -2602
-  m_ReflectionsDelay: 0.007
-  m_Reverb: 200
-  m_ReverbDelay: 0.011
+  m_RoomHF: -476
+  m_DecayTime: 4.32
+  m_DecayHFRatio: 0.59
+  m_Reflections: -789
+  m_ReflectionsDelay: 0.02
+  m_Reverb: -289
+  m_ReverbDelay: 0.03
   m_HFReference: 5000
   m_Diffusion: 100
   m_Density: 100
@@ -12288,7 +12288,7 @@ GameObject:
   - component: {fileID: 925243132}
   m_Layer: 0
   m_Name: Paper_3
-  m_TagString: Untagged
+  m_TagString: Paper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12471,7 +12471,7 @@ GameObject:
   - component: {fileID: 1219231403}
   m_Layer: 0
   m_Name: Paper_4
-  m_TagString: Untagged
+  m_TagString: Paper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13330,7 +13330,7 @@ GameObject:
   - component: {fileID: 1844432839}
   m_Layer: 0
   m_Name: Paper_5
-  m_TagString: Untagged
+  m_TagString: Paper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
