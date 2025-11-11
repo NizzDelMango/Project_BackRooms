@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Paper
   - PaperCountUI
+  - Door
   layers:
   - Default
   - TransparentFX
