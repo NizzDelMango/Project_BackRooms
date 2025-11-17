@@ -112,4 +112,13 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("대상을 활성화하려 했으나, 씬에서 'ActivationTarget'을 찾지 못했습니다.");
         }
     }
+    public void ResetPaperCount()
+    {
+        currentPaper = 0;
+        Debug.Log("종이 개수가 0으로 초기화되었습니다.");
+
+        // 씬이 로드될 때 OnSceneLoaded에서 UpdatePaperUI()를 다시 호출하므로
+        // 여기서 UI를 업데이트할 필요는 없지만, 안전하게 호출해 둡니다.
+        UpdatePaperUI();
+    }
 }
