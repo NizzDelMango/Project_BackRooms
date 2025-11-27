@@ -19,11 +19,11 @@ public class StartMenu : MonoBehaviour
         // 3. (혹시나 게임이 멈춰있을 수 있으니) 게임 시간을 1배속으로
         Time.timeScale = 1f;
 
-        if (GameManager.instance != null)
-        {
-            // 3. GameManager의 종이 개수를 0으로 리셋시킵니다.
-            GameManager.instance.ResetPaperCount();
-        }
+        //if (GameManager.instance != null)
+        //{
+        //    // 3. GameManager의 종이 개수를 0으로 리셋시킵니다.
+        //    GameManager.instance.ResetPaperCount();
+        //}
     }
 
 
